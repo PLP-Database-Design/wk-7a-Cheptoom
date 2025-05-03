@@ -1,8 +1,8 @@
 --Quiz 1.Create the ProductDetail_1NF table
 CREATE TABLE ProductDetail_1NF (
     OrderID INT,
-    CustomerName VARCHAR(255),
-    Product VARCHAR(255)
+    CustomerName VARCHAR(100),
+    Product VARCHAR(100)
 );  
 INSERT INTO ProductDetail_1NF (OrderID, CustomerName, Product)
 VALUES
@@ -16,7 +16,7 @@ VALUES
 --Quiz 2.create orderdetails table_2NF
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY,
-    CustomerName VARCHAR(255)
+    CustomerName VARCHAR(100)
 );
 INSERT INTO Orders (OrderID, CustomerName)
 VALUES
@@ -27,7 +27,7 @@ VALUES
 --create product table_2NF
 CREATE TABLE OrderItems (
     OrderID INT,
-    Product VARCHAR(255),
+    Product VARCHAR(100),
     Quantity INT,
     PRIMARY KEY (OrderID, Product),
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
